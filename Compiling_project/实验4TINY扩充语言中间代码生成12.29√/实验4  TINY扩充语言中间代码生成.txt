@@ -1,0 +1,61 @@
+                                                           实验4  TINY扩充语言的中间代码生成
+
+
+一、实验内容：
+
+（一）为Tiny语言扩充的语法有：
+
+1.增加while循环；
+2.增加for循环；
+3.扩充算术表达式的运算符号：-=减法赋值运算符号（类似于C语言的-=）、  += 加法赋值运算符号（类似于C语言的+=）、求余%、乘方^，
+4.扩充扩充比较运算符号：>(大于)、<=(小于等于)、>=(大于等于)、<>(不等于)等运算符号，
+
+（二）对应的语法规则分别为：
+1.while循环语句的语法规则: while-stmt-->while exp do stmt-sequence enddo 
+
+2.for语句的语法规则：
+ （1) for-stmt-->for identifier:=simple-exp  to  simple-exp  do  stmt-sequence enddo    步长递增1
+  (2) for-stmt-->for identifier:=simple-exp  downto  simple-exp  do  stmt-sequence enddo    步长递减1
+
+3.-=减法赋值运算符号（类似于C语言的-=）、+= 加法赋值运算符号、求余%、乘方^等运算符号的文法规则请自行组织。
+
+4.>(大于)、<=(小于等于)、>=(大于等于)、<>(不等于)等运算符号的文法规则请自行组织。
+
+5.TINY 语言的BNF语法规则如下：
+
+programstmt-sequence
+stmt-sequence stmt-sequence ；statement  |statement
+statement if-stmt |repeat-stmt |assign-stmt | read-stmt|write-stmt
+if-stmtif exp then stmt-sequence end 
+| if exp then stmt-sequence else stmt-sequence  end 
+repeat-stmtrepeat stmt-sequence until exp
+assign-stmtidentifier := exp
+read-stmtread identifier
+write-stmtwrite exp
+expsimple-exp comparison-op simple-exp |simple-exp
+comparison-exp < | =
+simple-expsimple-exp addop term  | term 
+addop + |-
+termterm mulop factor | factor 
+mulop * | /
+factor(exp) | number | identifier
+
+
+输入：一个扩充语法的TINY语言源程序
+输出：输出所生成的中间代码。
+
+
+（二）应该书写完善的软件文档
+
+
+
+二、上交方法：
+     通过砺儒云平台进行实验提交
+
+
+三、完成方式：每个学生自行独立完成。
+
+
+
+
+
